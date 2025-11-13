@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shiv Kumar Rathor | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="shiv_logo.png"/>
+  <style>
+    body, a, button, input, textarea { cursor: none !important; }
+    .cursor { position: fixed; width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: background-color 0.3s, transform 0.15s; z-index: 9999; box-shadow: 0 0 8px #7c3aedcc; }
+    .cursor.hovered { width: 40px; height: 40px; background: #db2777; box-shadow: 0 0 16px #db2777cc; transform: translate(-50%,-50%) scale(1.5);}
+    .cursor-inner { width: 8px; height: 8px; background: #fff; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+    html { scroll-behavior: smooth; }
+    .modern-section { position: relative; overflow: visible; background: linear-gradient(135deg, #1c1240 75%, #28163c 95%); border-radius: 1.5rem; box-shadow: 0 4px 32px #a21caf22, 0 0 80px #fbbf2433; color: #f3f4f6 !important; backdrop-filter: blur(2px);}
+    .modern-section::before { content: ''; position: absolute; inset: -4px; border-radius: 1.7rem; z-index: 0; background: linear-gradient(120deg, #a21caf88, #fbbf2444, #db277788, #a21caf88); filter: blur(12px); opacity:0.2; pointer-events:none; animation:border-glow 3s linear infinite;}
+    @keyframes border-glow { 0% {background-position:0% 50%} 100%{background-position:100% 50%} }
+    .fade-in { opacity: 0; transform: translateY(40px) scale(0.96) rotateY(10deg); transition: opacity 0.7s, transform 0.7s;}
+    .fade-in.visible { opacity: 1; transform: translateY(0) scale(1) rotateY(0deg);}
+    .nav-link { position:relative; }
+    .nav-link::after {content:''; position:absolute; width:0%; height:2px; left:0; bottom:-2px; background:currentColor; transition: width 0.3s;}
+    .nav-link:hover::after { width:100%; }
+    @media (max-width:480px){
+      h1{font-size:2rem;}
+      .nav-link{font-size:0.9rem;}
+      #themeToggle,
+      .resume-btn{padding:6px 12px;font-size:0.8rem;}
+    }
+  </style>
+</head>
+
+<body id="mainBody" class="transition-colors duration-500 bg-gray-900 text-white">
+  <audio id="audioClick" src="game.mp3" preload="auto"></audio>
+  <audio id="audioHover" src="game.mp3" preload="auto"></audio>
+  <audio id="audioLoad" src="game.mp3" preload="auto"></audio>
+  <button id="muteToggle" class="ml-4 px-3 py-1 bg-yellow-300 text-black rounded hover:bg-yellow-400 transition fixed top-6 right-6 z-40 shadow-lg">Mute Sound</button>
+  <div class="cursor" id="customCursor"><div class="cursor-inner"></div></div>
+
+  <!-- Navbar with Resume Download Button -->
+  <nav class="bg-white dark:bg-gradient-to-r dark:from-indigo-900 dark:to-purple-900 shadow-lg sticky top-0 z-50 transition duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <a href="shiv.jpg" aria-label="Home"><img src="shiv.jpg" alt="logo" class="h-12 w-12 rounded-full border-2 border-indigo-500 dark:border-white shadow-lg transition duration-300"></a>
+        <span class="font-black text-3xl text-indigo-900 dark:text-white tracking-wide animate-pulse">Shiv</span>
+      </div>
+      <div class="space-x-6 text-lg flex items-center">
+        <a href="#skills" class="nav-link text-indigo-800 dark:text-white hover:text-yellow-400 font-medium transition transform hover:scale-105">Skills</a>
+        <a href="#projects" class="nav-link text-indigo-800 dark:text-white hover:text-yellow-400 font-medium transition transform hover:scale-105">Projects</a>
+        <a href="#education" class="nav-link text-indigo-800 dark:text-white hover:text-yellow-400 font-medium transition transform hover:scale-105">Education</a>
+        <a href="#contact" class="nav-link text-indigo-800 dark:text-white hover:text-yellow-400 font-medium transition transform hover:scale-105">Contact</a>
+        <!-- Resume Download Button -->
+        <a href="tech_resume_latest__1___4___1_.pdf" download class="resume-btn ml-4 px-3 py-1 rounded bg-green-400 text-white font-semibold hover:bg-green-500 transition shadow focus:outline-none">Download Resume</a>
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="ml-2 px-3 py-1 rounded bg-indigo-100 dark:bg-yellow-300 text-indigo-900 dark:text-black font-semibold hover:bg-indigo-200 dark:hover:bg-yellow-400 transition" aria-label="Toggle theme">Toggle Theme</button>
+      </div>
+    </div>
+  </nav>
+<script>
+  // Run only after DOM has loaded to avoid null button
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  });
+</script>
+
+  <!-- Hero Section -->
+  <header class="py-20 px-6 bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-neutral-900 dark:to-black transition">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-14">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-indigo-800 dark:text-yellow-300 mb-2">I love Coding</h2>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-purple-700 dark:from-yellow-200 dark:to-yellow-400 mb-4">Shiv Kumar Rathor</h1>
+        <p class="mt-6 text-xl font-medium text-indigo-700 dark:text-yellow-200">
+          <span id="typewriter" class="text-purple-700 dark:text-yellow-300 font-semibold"></span>
+        </p>
+      </div>
+      <div class="md:w-1/2 text-center flex justify-center">
+        <div class="relative inline-block">
+          <img src="image.png" alt="Shiv Kumar Rathor" class="rounded-3xl w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 shadow-2xl border-4 border-indigo-200 dark:border-yellow-300 mx-auto ring-8 ring-white/50 dark:ring-yellow-100/30 transition-transform hover:scale-105 duration-300">
+          <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 dark:bg-yellow-400 text-white dark:text-black font-semibold text-base shadow-xl tracking-wider">Full Stack Developer</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="mainContent" class="space-y-20">
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-6 rounded-xl shadow-xl container mx-auto bg-white dark:bg-neutral-900 transition duration-300">
+      <h2 class="text-4xl font-extrabold mb-10 text-indigo-700 dark:text-yellow-300 text-center flex items-center justify-center gap-3">
+        <span>
+          <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="inline-block"><path d="M16 18v-1a4 4 0 00-4-4H8a4 4 0 00-4 4v1"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>Skills
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">C++</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">DSA</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">HTML</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">CSS</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">JavaScript</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">Tailwind CSS</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">Bootstrap</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">MERN Stack</div>
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">Git</div>
+         <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">excel</div>
+          <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">ms word</div>
+           <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">PowerBi</div>
+            <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">SQL</div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="modern-section fade-in py-16 px-6 container mx-auto">
+      <h2 class="text-4xl font-extrabold mb-10 text-pink-300 text-center">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-neutral-900 dark:to-black shadow-lg rounded-2xl hover:shadow-2xl transition p-8 flex flex-col justify-between group">
+          <h3 class="text-2xl font-bold text-indigo-700 dark:text-yellow-200 mb-3">Employee Management System</h3>
+          <p class="text-base text-gray-700 dark:text-gray-200 mb-6">Built using HTML, TailwindCSS, and ReactJS with dashboards, task assignment, real-time tracking, etc.</p>
+          <span class="inline-block px-5 py-1 bg-indigo-700 dark:bg-yellow-300 text-white dark:text-black rounded-full font-semibold shadow-md mt-auto">Front End</span>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-neutral-900 dark:to-black shadow-lg rounded-2xl hover:shadow-2xl transition p-8 flex flex-col justify-between group">
+          <h3 class="text-2xl font-bold text-indigo-700 dark:text-yellow-200 mb-3">Book My Ride</h3>
+          <p class="text-base text-gray-700 dark:text-gray-200 mb-6">A full MERN stack project with real-time tracking, ride booking, JWT authentication, and WebSockets.</p>
+          <a href="https://github.com/shiv1234-byte" target="_blank" class="inline-block px-5 py-1 bg-purple-700 text-white hover:bg-purple-800 transition rounded-full font-semibold shadow-md mt-auto hover:scale-105">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+    <!-- Education Section -->
+    <section id="education" class="modern-section fade-in py-16 px-6 rounded-xl shadow-md container mx-auto">
+      <h2 class="text-4xl font-extrabold mb-10 text-green-300 text-center">Education</h2>
+      <ul class="list-disc pl-5 space-y-4 text-lg text-green-100">
+        <li><strong>Electrical Engineering</strong>, DTU Delhi, will complete in 2026</li>
+        <li><strong>XII (CBSE)</strong> – 90.8% (2021)</li>
+        <li><strong>X (CBSE)</strong> – 89.8% (2019)</li>
+      </ul>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="modern-section fade-in py-16 px-6 rounded-xl shadow-md container mx-auto">
+      <h2 class="text-4xl font-extrabold mb-10 text-cyan-300 text-center">Contact</h2>
+      <div class="space-y-4 text-lg text-center px-4 sm:px-0 text-cyan-100">
+        <p>Email: <a href="mailto:rshiv8183@gmail.com" class="text-purple-700 font-medium hover:underline">rshiv8183@gmail.com</a></p>
+        <p>Phone: <a href="tel:+917042011696" class="text-purple-700 font-medium hover:underline">+91 7042011696</a></p>
+        <p>GitHub: <a href="https://github.com/shiv1234-byte" class="text-purple-700 font-medium hover:underline">github.com/shiv1234-byte</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/shiv-rathor-945454250/" class="text-purple-700 font-medium hover:underline">LinkedIn Profile</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-indigo-700 to-purple-700 text-white text-center py-6 shadow-inner">
+    <p>&copy; 2025 Shiv Kumar Rathor. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts for animation, cursor, sound, and typewriter -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    // Fade-in sections on scroll
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}
+      });
+    });
+    document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
+
+    // Typewriter
+    const roles=["C++ Developer","DSA Expert","MERN Stack Developer","Open Source Contributor"];
+    let current=0,i=0,typingSpeed=80;
+    const typewriter=document.getElementById("typewriter");
+    function type(){if(i<roles[current].length){typewriter.textContent+=roles[current].charAt(i);i++;setTimeout(type,typingSpeed);}else{setTimeout(erase,1500);}}
+    function erase(){if(i>0){typewriter.textContent=roles[current].substring(0,i-1);i--;setTimeout(erase,50);}else{current=(current+1)%roles.length;setTimeout(type,300);}}
+    type();
+
+    // Custom cursor
+    const cursor=document.getElementById("customCursor");
+    let mouseX=0,mouseY=0,posX=0,posY=0;
+    window.addEventListener("mousemove",e=>{mouseX=e.clientX;mouseY=e.clientY;});
+    function animateCursor(){posX+=(mouseX-posX)*0.22;posY+=(mouseY-posY)*0.22;cursor.style.left=posX+"px";cursor.style.top=posY+"px";requestAnimationFrame(animateCursor);}
+    animateCursor();
+    ["a","button","input","textarea"].forEach(sel=>{
+      document.querySelectorAll(sel).forEach(elem=>{
+        elem.addEventListener("mouseenter",()=>{cursor.classList.add("hovered");});
+        elem.addEventListener("mouseleave",()=>{cursor.classList.remove("hovered");});
+      });
+    });
+
+    // Sound logic
+    let muted=false;
+    const muteToggle=document.getElementById("muteToggle"),
+      audioLoad=document.getElementById("audioLoad"),audioClick=document.getElementById("audioClick"),audioHover=document.getElementById("audioHover");
+    muteToggle.addEventListener("click",()=>{muted=!muted;[audioLoad,audioClick,audioHover].forEach(audio=>audio.muted=muted);muteToggle.textContent=muted?"Unmute Sound":"Mute Sound";});
+    document.addEventListener("DOMContentLoaded",()=>{audioLoad.volume=.3;audioLoad.play();});
+    ["a","button"].forEach(sel=>{
+      document.querySelectorAll(sel).forEach(elem=>{
+        elem.addEventListener("mouseenter",()=>{audioHover.currentTime=0;audioHover.play();});
+        elem.addEventListener("click",()=>{audioClick.currentTime=0;audioClick.play();});
+      });
+    });
+
+    // Parallax effect (soft)
+    window.addEventListener("scroll",()=>{
+      document.querySelectorAll(".modern-section").forEach((section,i)=>{
+        const rect=section.getBoundingClientRect(),offset=Math.max(0,1-rect.top/window.innerHeight);
+        section.style.transform=`translateY(${offset*24}px) scale(${1-offset*0.03})`;
+      });
+    });
+  </script>
+</body>
+</html>
