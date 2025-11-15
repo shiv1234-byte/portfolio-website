@@ -48,8 +48,16 @@
         <a href="#projects" class="nav-link text-indigo-800 dark:text-white hover:text-yellow-400 font-medium transition transform hover:scale-105">Projects</a>
         <a href="#education" class="nav-link text-indigo-800 dark:text-white hover:text-yellow-400 font-medium transition transform hover:scale-105">Education</a>
         <a href="#contact" class="nav-link text-indigo-800 dark:text-white hover:text-yellow-400 font-medium transition transform hover:scale-105">Contact</a>
-        <!-- Resume Download Button -->
-        <a href="tech_resume_latest__1___4___1_.pdf" download class="resume-btn ml-4 px-3 py-1 rounded bg-green-400 text-white font-semibold hover:bg-green-500 transition shadow focus:outline-none">Download Resume</a>
+       <!-- Resume Download Buttons -->
+<div class="flex space-x-4 ml-4">
+  <a href="tech_resume_latest__1___4___1_.pdf" download class="resume-btn px-3 py-1 rounded bg-green-400 text-white font-semibold hover:bg-green-500 transition shadow focus:outline-none" aria-label="Download Tech Resume">
+    Download Tech Resume
+  </a>
+  <a href="general_resume.pdf" download class="resume-btn px-3 py-1 rounded bg-blue-400 text-white font-semibold hover:bg-blue-500 transition shadow focus:outline-none" aria-label="Download General Resume">
+    Download analytic resume
+  </a>
+</div>
+
         <!-- Theme Toggle Button -->
         <button id="themeToggle" class="ml-2 px-3 py-1 rounded bg-indigo-100 dark:bg-yellow-300 text-indigo-900 dark:text-black font-semibold hover:bg-indigo-200 dark:hover:bg-yellow-400 transition" aria-label="Toggle theme">Toggle Theme</button>
       </div>
@@ -78,7 +86,7 @@
       <div class="md:w-1/2 text-center flex justify-center">
         <div class="relative inline-block">
           <img src="image.png" alt="Shiv Kumar Rathor" class="rounded-3xl w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 shadow-2xl border-4 border-indigo-200 dark:border-yellow-300 mx-auto ring-8 ring-white/50 dark:ring-yellow-100/30 transition-transform hover:scale-105 duration-300">
-          <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 dark:bg-yellow-400 text-white dark:text-black font-semibold text-base shadow-xl tracking-wider">Full Stack Developer</span>
+          <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 dark:bg-yellow-400 text-white dark:text-black font-semibold text-base shadow-xl tracking-wider">Full Stack Developer and Data Analytics</span>
         </div>
       </div>
     </div>
@@ -107,6 +115,8 @@
           <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">ms word</div>
            <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">PowerBi</div>
             <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">SQL</div>
+             <div class="bg-gradient-to-br from-indigo-100 via-white to-indigo-200 dark:from-indigo-900 dark:to-neutral-800 p-6 text-center rounded-xl font-semibold shadow-lg text-indigo-900 dark:text-yellow-200 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 duration-300 transition">Python</div>
+            
       </div>
     </section>
     <!-- Projects Section -->
@@ -115,15 +125,22 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Card 1 -->
         <div class="bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-neutral-900 dark:to-black shadow-lg rounded-2xl hover:shadow-2xl transition p-8 flex flex-col justify-between group">
-          <h3 class="text-2xl font-bold text-indigo-700 dark:text-yellow-200 mb-3">Employee Management System</h3>
+          <h3 class="text-2xl font-bold text-indigo-700 dark:text-yellow-200 mb-3">Employee Management System <a href=""><u>link</u></a></h3>
           <p class="text-base text-gray-700 dark:text-gray-200 mb-6">Built using HTML, TailwindCSS, and ReactJS with dashboards, task assignment, real-time tracking, etc.</p>
-          <span class="inline-block px-5 py-1 bg-indigo-700 dark:bg-yellow-300 text-white dark:text-black rounded-full font-semibold shadow-md mt-auto">Front End</span>
+          <a href="https://github.com/shiv1234-byte/employee-management-system"class="inline-block px-5 py-1 bg-indigo-700 dark:bg-yellow-300 text-white dark:text-black rounded-full font-semibold shadow-md mt-auto">Front End github</a>
         </div>
         <!-- Card 2 -->
         <div class="bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-neutral-900 dark:to-black shadow-lg rounded-2xl hover:shadow-2xl transition p-8 flex flex-col justify-between group">
-          <h3 class="text-2xl font-bold text-indigo-700 dark:text-yellow-200 mb-3">Book My Ride</h3>
+          <h3 class="text-2xl font-bold text-indigo-700 dark:text-yellow-200 mb-3">Book My Ride  <a href="https://book-my-ride123.netlify.app/"><u>(link)</u></a></h3>
           <p class="text-base text-gray-700 dark:text-gray-200 mb-6">A full MERN stack project with real-time tracking, ride booking, JWT authentication, and WebSockets.</p>
-          <a href="https://github.com/shiv1234-byte" target="_blank" class="inline-block px-5 py-1 bg-purple-700 text-white hover:bg-purple-800 transition rounded-full font-semibold shadow-md mt-auto hover:scale-105">View on GitHub</a>
+          <a href="https://github.com/shiv1234-byte/book-my-ride" target="_blank" class="inline-block px-5 py-1 bg-purple-700 text-white hover:bg-purple-800 transition rounded-full font-semibold shadow-md mt-auto hover:scale-105">MERN STACK github</a>
+        </div>
+        <!-- card 3 -->
+         <div class="bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-neutral-900 dark:to-black shadow-lg rounded-2xl hover:shadow-2xl transition p-8 flex flex-col justify-between group">
+          <h3 class="text-2xl font-bold text-indigo-700 dark:text-yellow-200 mb-3">Scalable order management(backend) </h3>
+          <p class="text-base text-gray-700 dark:text-gray-200 mb-6">Built a command-line application that simulates a real-world e-commerce backend, handling product inventory, user carts, order 
+placement, and shipping workflows. </p>
+          <a href="https://github.com/shiv1234-byte/order-management-system" target="_blank" class="inline-block px-5 py-1 bg-purple-700 text-white hover:bg-purple-800 transition rounded-full font-semibold shadow-md mt-auto hover:scale-105">C++ github</a>
         </div>
       </div>
     </section>
@@ -165,7 +182,7 @@
     document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 
     // Typewriter
-    const roles=["C++ Developer","DSA Expert","MERN Stack Developer","Open Source Contributor"];
+    const roles=["C++ Developer","DSA Expert","MERN Stack Developer","Data Analytics"];
     let current=0,i=0,typingSpeed=80;
     const typewriter=document.getElementById("typewriter");
     function type(){if(i<roles[current].length){typewriter.textContent+=roles[current].charAt(i);i++;setTimeout(type,typingSpeed);}else{setTimeout(erase,1500);}}
